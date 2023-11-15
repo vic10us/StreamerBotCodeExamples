@@ -6,6 +6,10 @@ Video Link: [How To Make Your Own Twitch Alerts in OBS with Streamer Bot]([sdkjd
 
 This code should be only followed after checking out and following the tutorial seen there.
 
+## Demo
+
+YouTube: [OBS Twitch Alerts with C# and Streamer Bot](https://youtu.be/Gr51YwsOQQ4?si=Gcf4HfLQjgKXT82Z)
+
 ## Basic Installation
 
 Click Import in streamerbot and drag the file `OBSTwitchAlerts.sb` into the `Input String` box.
