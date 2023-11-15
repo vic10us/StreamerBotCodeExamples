@@ -246,7 +246,7 @@ public class CPHInline
     /// <param name="filename">The full path to the sound file.</param>
     private void PlaySound(string filename)
     {
-        if (File.Exists(filename)) {
+        if (!File.Exists(filename)) {
             CPH.LogError($"Sound File not found: {filename}");
             return; 
         }
