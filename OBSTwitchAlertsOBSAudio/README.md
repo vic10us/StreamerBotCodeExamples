@@ -8,11 +8,22 @@ This code should be only followed after checking out and following the tutorial 
 
 ## Demo
 
-This feature is *coming soon*
+This feature is *coming soon* to a YouTube near you 😁
 
 ## Basic Installation
 
-Click Import in streamerbot and drag the file `OBSTwitchAlertsOBSAudioClips.sb` into the `Input String` box.
+### Import Scene In OBS
+
+- Make sure to install the Source Copy plugin into OBS (*see link below*)
+- In OBS Choose `Tools` -> `Source Copy` -> `Load Scene` from the menu
+- Locate the file `TwitchAlertsV1-1080p-Import.json` (*or 1440p if your OBS setup is configured for 1440p*) then click the `Open` button
+- Choose `Scene Collection` -> `Check for Missing Files`
+- Click the `Search Directory...` button and open the `OBSTwitchAlertsOBSAudio/sounds` foler the click the `Select Folder` button
+- The `State` column should show `Found` for all the sound files. Now click the `Apply` button
+
+### Import Actions in Streamer.bot
+
+- Click Import in streamerbot and drag the file `OBSTwitchAlertsOBSAudioClips.sb` into the `Input String` box.
 
 ## Advanced Installation
 
