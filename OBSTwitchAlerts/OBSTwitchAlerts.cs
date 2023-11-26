@@ -10,6 +10,41 @@ using System.IO;
 using System.ComponentModel;
 using System.Threading;
 
+/// <summary>
+///   Display Twitch Alerts in OBS
+/// </summary>
+/// <triggers>
+///   <trigger source="Twitch" type="Gift Bomb" criteria="Any,Subs Gifted:Any" enabled="Yes" />
+///   <trigger source="Twitch" type="Gift Subscription" criteria="Any,Milestone:Any" enabled="Yes" />
+///   <trigger source="Twitch" type="Follow" criteria="" enabled="Yes" />
+///   <trigger source="Twitch" type="Subscription" criteria="Any" enabled="Yes" />
+///   <trigger source="Twitch" type="Resubscription" criteria="Any,Cumulative:Any" enabled="Yes" />
+///   <trigger source="Twitch" type="Cheer" criteria="Any" enabled="Yes" />
+/// </triggers>
+/// <variables>
+/// </variables>
+/// <references>
+///   <reference source="netstandard.dll" />
+///   <reference source="System.Linq.dll" />
+///   <reference source="System.Linq.Queryable.dll" />
+///   <reference source="System.ComponentModel.dll" />
+///   <reference source="System.ComponentModel.EventBasedAsync.dll" />
+///   <reference source="System.dll" />
+///   <reference source="netstandard.dll" />
+///   <reference source="NAudio.dll" />
+///   <reference source="NAudio.Core.dll" />
+///   <reference source="NAudio.Wasapi.dll" />
+///   <reference source="NAudio.Vorbis.dll" />
+///   <reference source="NAudio.WinMM.dll" />
+///   <reference source="NAudio.WinForms.dll" />
+/// </references>
+/// <settings name="OBSTwitchAlerts" 
+///           description="Display Twitch Alerts in OBS" 
+///           keepInstanceActive="false"
+///           precompileOnApplicationStart="true" 
+///           delayedStart="false" 
+///           saveResultToVariable="false"
+///           variableName="" />
 public class CPHInline
 {
     /// <summary>
