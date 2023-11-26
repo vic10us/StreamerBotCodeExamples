@@ -2,19 +2,19 @@
 
 ## Setup OBS Twitch Alerts *(Alert sounds in Streamer.bot)*
 
-[OBS Twitch Alerts](OBSTwitchAlerts/README)
+[OBS Twitch Alerts](OBSTwitchAlerts/README.md)
 
 ## Setup OBS Twitch Alerts *(Alert sounds as OBS Scene Sources)*
 
-[OBS Twitch Alerts with OBS Audio](OBSTwitchAlertsOBSAudio/README)
+[OBS Twitch Alerts with OBS Audio](OBSTwitchAlertsOBSAudio/README.md)
 
 ## Setup OBS Media Player with YouTube Music Player Desktop
 
-[OBS Media Player](OBSMediaPlayer/README)
+[OBS Media Player](OBSMediaPlayer/README.md)
 
 ## Socket.io Keep-Alive
 
-[Socket.io Keep-Alive](SocketIO/KeepAlive/README)
+[Socket.io Keep-Alive](SocketIO/KeepAlive/README.md)
 
 ## Plugins Used
 
