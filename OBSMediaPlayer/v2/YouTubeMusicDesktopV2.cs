@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Newtonsoft.Json;
 
 /// <summary>
@@ -17,16 +16,9 @@ using Newtonsoft.Json;
 ///   <variable name="isYTMDesktopAuthenticated" type="bool" scope="global" persisted="false" />
 /// </variables>
 /// <references>
-///   <reference source="netstandard.dll" />
-///   <reference source="System.Linq.dll" />
-///   <reference source="System.Linq.Queryable.dll" />
-///   <reference source="System.ComponentModel.dll" />
-///   <reference source="System.ComponentModel.EventBasedAsync.dll" />
-///   <reference source="System.dll" />
-///   <reference source="netstandard.dll" />
 /// </references>
 /// <settings name="YouTubeMusicDesktopV2" 
-///           description="Updates the OBS Media Player when updates are received by the YouTube Muisic Desktop App Socket.io webservice" 
+///           description="Updates the OBS Media Player when updates are received by the YouTube Muisic Desktop App Socket.io webservice." 
 ///           keepInstanceActive="false"
 ///           precompileOnApplicationStart="true" 
 ///           delayedStart="false" 
@@ -415,4 +407,85 @@ public class WebSocketMessageArgs : BaseWebSocketArgs
 
 public class WebSocketConnectArgs : BaseWebSocketArgs
 {
+}
+
+public static class Polyfills
+{
+    public static T LastOrDefault<T>(this IEnumerable<T> source)
+    {
+        return LastOrDefault(source, _ => true);
+    }
+
+    public static T LastOrDefault<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+    {
+        if (source == null)
+        {
+            throw new ArgumentNullException(nameof(source));
+        }
+
+        if (predicate == null)
+        {
+            throw new ArgumentNullException(nameof(predicate));
+        }
+
+        if (source is IList<T> list)
+        {
+            for (int i = list.Count - 1; i >= 0; i--)
+            {
+                if (predicate(list[i]))
+                {
+                    return list[i];
+                }
+            }
+        }
+        else
+        {
+            T lastOrDefault = default(T);
+            bool found = false;
+
+            foreach (var item in source)
+            {
+                if (predicate(item))
+                {
+                    lastOrDefault = item;
+                    found = true;
+                }
+            }
+
+            if (found)
+            {
+                return lastOrDefault;
+            }
+        }
+
+        return default(T);
+    }
+    
+    public static T FirstOrDefault<T>(this IEnumerable<T> source)
+    {
+        return FirstOrDefault(source, _ => true);
+    }
+
+    public static T FirstOrDefault<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+    {
+        if (source == null)
+        {
+            throw new ArgumentNullException(nameof(source));
+        }
+
+        if (predicate == null)
+        {
+            throw new ArgumentNullException(nameof(predicate));
+        }
+
+        foreach (var item in source)
+        {
+            if (predicate(item))
+            {
+                return item;
+            }
+        }
+
+        return default(T);
+    }
 }
